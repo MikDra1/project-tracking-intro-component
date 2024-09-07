@@ -1,0 +1,301 @@
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/*
+    2. Remove default margin
+  */
+* {
+  margin: 0;
+}
+/*
+    Typographic tweaks!
+    3. Add accessible line-height
+    4. Improve text rendering
+  */
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Barlow", sans-serif;
+
+}
+/*
+    5. Improve media defaults
+  */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+    6. Remove built-in form typography styles
+  */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/*
+    7. Avoid text overflows
+  */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+/*
+    8. Create a root stacking context
+  */
+#root,
+#__next {
+  isolation: isolate;
+}
+
+:root {
+  --Red: hsl(0, 100%, 68%);
+
+  --Very-Dark-Blue: hsl(230, 29%, 20%);
+  --Dark-Grayish-Blue: hsl(230, 11%, 40%);
+  --Grayish-Blue: hsl(231, 7%, 65%);
+  --Light-Grayish-Blue: hsl(207, 33%, 95%);
+}
+
+.container {
+  overflow: hidden;
+
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: 5%;
+    padding-block: 2rem;
+}
+
+.header__ul {
+    list-style: none;
+    display: none;
+    text-transform: uppercase;
+    gap: 1rem;
+    font-weight: 700;
+    position: absolute;
+    top: 10vh;
+    background-color: #fff;
+    width: 90%;
+    z-index: 3;
+    padding-block: 1rem;
+    text-align: center;
+    box-shadow: 3px 3px 20px rgba(0, 0, 0, .2);
+}
+
+.header__dot {
+    display: none;
+}
+
+
+.header__ul div {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1rem;
+    letter-spacing: .2rem;
+    cursor: pointer;
+}
+
+.header__ul div:hover {
+    text-decoration: underline;
+}
+
+.header__ul--differ {
+    color: var(--Grayish-Blue);
+}
+
+.header__line {
+    width: 90%;
+    margin-inline: auto;
+    display: block;
+    height: 1px;
+    background-color: var(--Light-Grayish-Blue);
+}
+
+
+.burger {
+    display: block;
+    cursor: pointer;
+    z-index: 99;
+}
+
+.main {
+}
+
+.illustration {
+    width: 200vw;
+    transform: translateX(25%) scale(1.5);
+    padding-block: 15vw;
+}
+
+.main__desc {
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.main__desc span {
+    background-color: var(--Very-Dark-Blue);
+    color: white;
+    font-weight: 700;
+    padding: .2rem .6rem;
+    border-radius: 100vw;
+    letter-spacing: 0;
+    font-family: 'Barlow', sans-serif;
+    font-size: 1rem;
+}
+
+.main__desc {
+    letter-spacing: .3rem;
+    color: var(--Grayish-Blue);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.05rem;
+}
+
+.main__content {
+    width: 90%;
+    margin-inline: auto;
+    display: grid;
+    gap: 1rem;
+    margin-top: 3rem;
+}
+
+.main__bottom {
+    display: flex;
+    gap: 1rem;
+    text-transform: uppercase;
+    align-items: center;
+    color: var(--Grayish-Blue);
+    margin-top: .5rem;
+}
+
+.main__bottom p {
+    letter-spacing: .05rem;
+    font-family: 'Barlow Condensed', sans-serif;
+
+}
+
+.btn {
+    background-color: var(--Red);
+    color: white;
+    text-transform: uppercase;
+    font-weight: 700;
+    border: none;
+    padding: .75rem 1.25rem;
+    border-radius: .5rem;
+    font-size: .875rem;
+    cursor: pointer;
+    transition: all .3s;
+}
+
+.btn:hover {
+    background-color: hsl(0, 100%, 80%);
+}
+
+.main__text {
+    font-size: 1.15rem;
+    width: 85%;
+    color: var(--Very-Dark-Blue);
+}
+
+h1 {
+    text-transform: uppercase;
+    line-height: 1;
+    font-weight: 700;
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 2.5rem;
+}
+
+.bg {
+    height: 45vh;
+    width: 52vw;
+    background: var(--Light-Grayish-Blue);
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: -1;
+    border-bottom-left-radius: 5rem;
+}
+
+@media (min-width: 1200px) {
+    .header {
+        padding-inline: 8.5%;
+        padding-right: 15%;
+        padding-block: 3.5rem;
+    }
+    .main {
+        display: flex;
+        align-items: center;
+        flex-direction: row-reverse;
+        margin-top: 1rem;
+    }
+    .illustration {
+        transform: scale(1) translateX(25%);
+        padding: 0;
+    }
+
+    .main__content {
+        width: 100%;
+        transform: translateX(25%);
+    }
+
+    h1 {
+        font-size: 4rem;
+    }
+    .main__bottom {
+        margin-top: 3rem;
+        gap: 2rem;
+    }
+    .btn {
+        padding: .75rem 2rem;
+    }
+    .main__text {
+        width: 60%;
+        margin-top: 1rem;
+    }
+    .main__bottom p {
+        letter-spacing: .2rem;
+    }
+
+    .burger {
+        display: none;
+    }
+    .header__dot {
+        display: block;
+    }
+    .header__line {
+        display: none;
+    }
+    
+ .header__ul {
+    gap: 2rem;
+    position: static;
+    display: flex;
+    width: fit-content;
+    background-color: transparent;
+    box-shadow: none;
+} 
+
+.header__ul div {
+    font-size: .875rem;
+    letter-spacing: .2rem;
+}
+}
