@@ -72,6 +72,17 @@ h6 {
   --Light-Grayish-Blue: hsl(207, 33%, 95%);
 }
 
+@keyframes goDown {
+    0% {
+        height: 0;
+    }
+
+    100% {
+        height: 45vh;
+
+    }
+}
+
 .container {
   overflow: hidden;
 
@@ -225,7 +236,6 @@ h1 {
 }
 
 .bg {
-    height: 45vh;
     width: 52vw;
     background: var(--Light-Grayish-Blue);
     position: absolute;
@@ -233,6 +243,7 @@ h1 {
     top: 0;
     z-index: -1;
     border-bottom-left-radius: 5rem;
+    animation: goDown 1s ease-in-out  forwards;
 }
 
 @media (min-width: 1200px) {
